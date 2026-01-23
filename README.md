@@ -1,5 +1,3 @@
----
-
 # 🛡️ AI Credit Risk Commander: Automação End-to-End de Risco e Compliance
 
 > **Impacto de Negócio:** Redução do Time-to-Decision de **14 dias para 24 horas** e mitigação de risco operacional através de Agentes de IA e Machine Learning.
