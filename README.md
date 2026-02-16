@@ -1,61 +1,59 @@
-# 🛡️ AI Credit Risk Commander: Automação End-to-End de Risco e Compliance
+# 📦 StockAI: Gestão de Estoque Inteligente com RAG
 
-> **Impacto de Negócio:** Redução do Time-to-Decision de **14 dias para 24 horas** e mitigação de risco operacional através de Agentes de IA e Machine Learning.
+## 📌 Visão Geral
+O **StockAI** é uma aplicação integrada que une o gerenciamento de inventário tradicional com o poder das LLMs. O diferencial deste projeto é permitir que o gestor não apenas veja números, mas **converse com os dados do seu estoque** para obter insights rápidos sobre reposição, tendências e descrições de produtos.
 
----
+## 🎯 Objetivos do Projeto
+1.  **Eficiência Operacional:** Reduzir o tempo de consulta a tabelas complexas através de uma interface de chat.
+2.  **Busca Semântica:** Encontrar produtos por contexto (ex: "preciso de algo para limpeza de escritórios") e não apenas por código SKU.
+3.  **Análise de Dados:** Utilizar IA para identificar produtos parados ou com baixo nível de estoque.
 
-## 1. O Problema de Negócio (The Business Challenge)
-A **Lending-Elite Fintech** enfrenta um gargalo crítico em sua operação de crédito. O processo de análise de novos tomadores é manual, levando em média **14 dias** para uma resposta final. Além disso, a política de crédito é complexa (contida em extensos PDFs de compliance), o que gera inconsistência nas aprovações e perdas financeiras por inadimplência não detectada.
+## 🛠️ Stack Tecnológica
+-   **Interface e App:** [Streamlit](https://streamlit.io/) (Frontend e Backend integrados).
+-   **Banco de Dados Relacional:** [SQLite](https://www.sqlite.org/) (Armazenamento de produtos, quantidades e transações).
+-   **Banco de Dados Vetorial:** [ChromaDB](https://www.trychroma.com/) (Armazenamento de embeddings para busca semântica e RAG).
+-   **Orquestração de IA:** [LangChain](https://python.langchain.com/) (Integração entre LLM, SQL e Vetores).
+-   **LLM:** OpenAI GPT-3.5/4 (via API).
 
-**O objetivo deste projeto é:**
-1.  **Automatizar o Score de Crédito** utilizando modelos preditivos.
-2.  **Identificar Fraudes e Anomalias** de forma proativa (Autoencoders).
-3.  **Implementar um Agente de IA** que consulte a política de compliance (RAG) e emita um parecer final fundamentado, reduzindo o ciclo total para **menos de 1 dia**.
+## 🚀 Funcionalidades Principais
+-   **Painel de Inventário:** Cadastro, edição e visualização de produtos salvos no SQLite.
+-   **Chat com o Estoque (SQL Agent):** Interface onde o usuário pergunta "Qual o valor total do meu estoque hoje?" e a IA traduz para uma query SQL, executa no SQLite e responde em linguagem natural.
+-   **Busca por Similaridade (RAG):** Utiliza o ChromaDB para encontrar produtos baseando-se na descrição técnica, ajudando a encontrar substitutos ou itens relacionados.
+-   **Alertas Inteligentes:** Sugestões automáticas de compra baseadas em regras de negócio processadas pela IA.
 
----
+## 📂 Estrutura do Projeto
+```text
+stock-ai/
+├── app.py              # Arquivo principal (Streamlit)
+├── database.py         # Lógica de conexão e queries SQLite
+├── vector_store.py     # Configuração do ChromaDB e Embeddings
+├── langchain_logic.py  # Chains e Agentes do LangChain
+├── requirements.txt    # Dependências do projeto
+└── data/               # Pasta para os arquivos .db do SQLite e Chroma
+```
 
-## 2. Estratégia de Solução (The Roadmap)
+## 🔧 Como Rodar
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/seu-usuario/stock-ai.git
+    ```
+2.  **Instale as dependências:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Configure sua chave da OpenAI:**
+    Crie um arquivo `.env` ou configure nos secrets do Streamlit:
+    ```text
+    OPENAI_API_KEY=sua_chave_aqui
+    ```
+4.  **Inicie a aplicação:**
+    ```bash
+    streamlit run app.py
+    ```
 
-Para este desafio, utilizei o dataset real do **LendingClub** (Kaggle), estruturando a solução em 3 camadas de inteligência:
+## 📈 Evoluções Futuras
+-   Implementação de previsão de demanda (Time Series) integrada ao chat.
+-   Leitura de Notas Fiscais via OCR para entrada automática de estoque.
+-   Migração para PostgreSQL/pgvector conforme a escala do projeto aumentar.
 
-### Camada 01: Motor de Risco (Machine Learning Clássico)
-*   **EDA Avançada:** Identificação dos principais drivers de inadimplência (DTI, FICO score, anual income).
-*   **Modelagem:** Treinamento de um classificador **XGBoost** para prever o `loan_status` (Default vs Fully Paid).
-*   **Métricas de Performance:** Foco em **Precision-Recall** e **KS (Kolmogorov-Smirnov)** para garantir a segurança da carteira.
-
-### Camada 02: Detecção de Anomalias (Deep Learning)
-*   Uso de **Autoencoders** para identificar padrões de comportamento atípicos em pedidos de crédito que burlam as regras tradicionais de scoring.
-
-### Camada 03: Agente de Compliance (GenAI / LLMs)
-*   **Arquitetura RAG:** Indexação da política de crédito em um banco de vetores (**ChromaDB**).
-*   **Agente Decisor:** Implementação via **LangChain** que recebe o score do modelo (Camada 01) e o perfil do cliente, consulta as normas no banco de vetores e gera uma justificativa de aprovação/reprovação em linguagem natural.
-
----
-
-## 3. Top 3 Insights de Negócio
-1.  **Agilidade é Lucro:** A redução de 93% no tempo de análise permite que a fintech capture bons clientes antes da concorrência, aumentando o GMV projetado.
-2.  **Risco Oculto:** O modelo de Autoencoder identificou que 5% dos clientes "aprovados" por regras simples possuíam padrões de gasto anômalos, evitando um prejuízo estimado de R$ X.
-3.  **Explicabilidade:** O uso de Agentes de IA resolve o problema da "caixa preta" do ML, fornecendo ao regulador uma justificativa clara para cada decisão de crédito.
-
----
-
-## 4. Stack Tecnológica & Engenharia
-*   **Linguagem:** Python 3.10+
-*   **Processamento de Dados:** DuckDB (Alta performance local) e Pandas.
-*   **IA & ML:** Scikit-learn, XGBoost, LangChain, Google Gemini API.
-*   **Vector Store:** ChromaDB.
-*   **Engenharia de Sistemas:** Integração de serviços via **FastAPI** e arquitetura de comunicação eficiente (conceitos de gRPC aplicados à latência do Agente).
-
----
-
-## 5. Como Executar o Projeto (Hands-on)
-1.  **Clone o repositório:** `git clone ...`
-2.  **Instale as dependências:** `pip install -r requirements.txt`
-3.  **Download do Dataset:** Obtenha o `lending_club_loans.csv` no Kaggle e coloque na pasta `/data`.
-4.  **Execute a interface:** `streamlit run app/main.py`
-
----
-
-### 📫 Contato e Networking
-**João Gabriel** - [LinkedIn](https://linkedin.com/in/joaogabrielborges)
 ---
