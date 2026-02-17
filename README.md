@@ -25,11 +25,8 @@ O **StockAI** é uma aplicação integrada que une o gerenciamento de inventári
 ```text
 stock-ai/
 ├── app.py              # Arquivo principal (Streamlit)
-├── database.py         # Lógica de conexão e queries SQLite
-├── vector_store.py     # Configuração do ChromaDB e Embeddings
-├── langchain_logic.py  # Chains e Agentes do LangChain
+├── database.db         # Lógica de conexão e queries SQLite
 ├── requirements.txt    # Dependências do projeto
-└── data/               # Pasta para os arquivos .db do SQLite e Chroma
 ```
 
 ## 🔧 Como Rodar
