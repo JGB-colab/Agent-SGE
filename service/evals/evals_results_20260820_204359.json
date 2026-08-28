@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-08-20T20:43:59.390444",
+  "modelo": "llama3.2",
+  "total_casos": 5,
+  "casos_passaram": 2,
+  "taxa_sucesso": "40.0%",
+  "resultados": [
+    {
+      "id": "001",
+      "pergunta": "Quantas unidades de produto X tem em estoque?",
+      "passou": false,
+      "detalhes": {
+        "contem_unidades": false,
+        "nao_contem_nÃ£o sei": true,
+        "nao_contem_nÃ£o tenho": true
+      },
+      "resposta": "Peço desculpas pelo erro! Parece que o produto X não tem uma quantidade associada.\n\nVou verificar novamente os dados... Ah, encontrei!\n\n**Resposta:** Infelizmente, não há informações disponíveis sobre a quantidade de produto X em estoque. Pode ser que o produto não exista ou não tenha sido adicionado ao nosso sistema ainda.\n\nSe você puder fornecer mais informações sobre o produto X, como o código de barras ou o nome do fabricante, posso tentar ajudar novamente!"
+    },
+    {
+      "id": "002",
+      "pergunta": "Quais produtos estÃ£o com estoque abaixo de 10 unidades?",
+      "passou": true,
+      "detalhes": {
+        "contem_produto": true,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "Peço desculpas pelo erro! Parece que o banco de dados não tem uma tabela chamada \"produtos\" com a estrutura necessária para executar a query.\n\nNo entanto, posso tentar novamente com uma abordagem diferente. Você pode fornecer-me mais informações sobre o banco de dados e a estrutura da tabela \"produtos\"? Ou talvez eu possa ajudar a criar uma query personalizada para obter os resultados desejados.\n\nSe você tiver acesso ao banco de dados, posso tentar executar a query novamente com uma abordagem diferente. Por exemplo:\n\n```\nSELECT nome, estoque FROM produtos WHERE estoque < 10\n```\n\nIsso irá selecionar apenas os campos \"nome\" e \"estoque\" da tabela \"produtos\" e exibir apenas os registros com estoque abaixo de 10 unidades.\n\nSe você não tiver acesso ao banco de dados, posso tentar ajudar a criar uma solução alternativa. Por favor, forneça mais informações sobre o seu banco de dados e os produtos que você deseja exibir."
+    },
+    {
+      "id": "003",
+      "pergunta": "Quantos pedidos com nome de categoria X?",
+      "passou": true,
+      "detalhes": {
+        "contem_categoria": true,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "{\"name\":\"sql_db_query\",\"parameters\":{\"query\":\"SELECT COUNT(*) FROM pedidos WHERE categoria = \\u201CX\\u201X\"}}"
+    },
+    {
+      "id": "004",
+      "pergunta": "Qual produto Ã© o mais caro?",
+      "passou": false,
+      "detalhes": {
+        "contem_produto": true,
+        "contem_preco": false,
+        "nao_contem_nÃ£o sei": true,
+        "nao_contem_nÃ£o tenho": true
+      },
+      "resposta": "Peço desculpas pelo erro! Vou tentar novamente.\n\nAqui está a resposta:\n\nO produto mais caro é o \"Smartwatch de alta tecnologia\", com um preço de R$ 2.499,90.\n\nAqui está uma visão geral do produto:\n\n**Smartwatch de alta tecnologia**\n\n* Preço: R$ 2.499,90\n* Descrição: Um smartwatch de alta tecnologia com recursos avançados, incluindo monitoramento de saúde, notificações e controle de música.\n* Categorias: Eletrônicos, Saúde e Bem-Estar\n\nSe você tiver alguma dúvida adicional, sinta-se à vontade para perguntar!"
+    },
+    {
+      "id": "005",
+      "pergunta": "Como estÃ¡ a distribuiÃ§Ã£o de vendas por categoria",
+      "passou": false,
+      "detalhes": {
+        "contem_categoria": true,
+        "contem_%": false,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "Peço desculpas pelo erro! Parece que o banco de dados não contém a tabela \"sales_table\". Para fornecer uma resposta mais precisa, preciso saber qual é o nome da tabela que contém as informações de vendas.\n\nSe você puder fornecer o nome da tabela, posso tentar novamente com o comando correto. Além disso, posso fornecer uma resposta mais geral sobre como obter a distribuição de vendas por categoria, mesmo que não seja com base em um banco de dados específico.\n\nAqui está uma resposta geral:\n\n**Distribuição de Vendas por Categoria**\n\nPara obter a distribuição de vendas por categoria, você pode usar uma consulta SQL que soma as vendas por categoria. Aqui está um exemplo de como fazer isso:\n\n* Se você estiver usando um banco de dados MySQL, você pode usar a seguinte consulta:\n```sql\nSELECT category, SUM(sales) AS total_sales\nFROM sales_table\nGROUP BY category;\n```\n* Se você estiver usando um banco de dados PostgreSQL, você pode usar a seguinte consulta:\n```sql\nSELECT category, SUM(sales) AS total_sales\nFROM sales_table\nGROUP BY category;\n```\n* Se você estiver usando um banco de dados SQLite, você pode usar a seguinte consulta:\n```sql\nSELECT category, SUM(sales) AS total_sales\nFROM sales_table\nGROUP BY category;\n```\nEssa consulta irá somar as vendas por categoria e fornecer a distribuição de vendas por categoria.\n\nSe você puder fornecer mais informações sobre o seu banco de dados, posso tentar novamente com o comando correto."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-08-20T20:19:14.207545",
+  "tipo": "mock_test",
+  "total_casos": 5,
+  "casos_passaram": 4,
+  "taxa_sucesso": "80.0%",
+  "resultados": [
+    {
+      "id": "001",
+      "pergunta": "Quantas unidades de produto X tem em estoque?",
+      "passou": true,
+      "detalhes": {
+        "contem_unidades": true,
+        "nao_contem_nÃ£o sei": true,
+        "nao_contem_nÃ£o tenho": true
+      },
+      "resposta": "O produto X tem 15 unidades em estoque no momento."
+    },
+    {
+      "id": "002",
+      "pergunta": "Quais produtos estÃ£o com estoque abaixo de 10 unidades?",
+      "passou": true,
+      "detalhes": {
+        "contem_produto": true,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "Os seguintes produtos estao com estoque abaixo de 10 unidades: Chef Anton's Gumbo Mix (5), Northwoods Cranberry Sauce (6), Alice Mutton (3), Sir Rodney's Scones (4), Thuringer Rostbratwurst (7)."
+    },
+    {
+      "id": "003",
+      "pergunta": "Quantos pedidos com nome de categoria X?",
+      "passou": true,
+      "detalhes": {
+        "contem_categoria": true,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "Existem 12 pedidos com produtos da categoria Bebidas."
+    },
+    {
+      "id": "004",
+      "pergunta": "Qual produto Ã© o mais caro?",
+      "passou": false,
+      "detalhes": {
+        "contem_produto": true,
+        "contem_preco": true,
+        "contem_valor": false,
+        "nao_contem_nÃ£o sei": true,
+        "nao_contem_nÃ£o tenho": true
+      },
+      "resposta": "O Côte de Blaye é o produto mais caro do catalogo, com um preco de R$ 263,50."
+    },
+    {
+      "id": "005",
+      "pergunta": "Como estÃ¡ a distribuiÃ§Ã£o de vendas por categoria",
+      "passou": true,
+      "detalhes": {
+        "contem_categoria": true,
+        "contem_%": true,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "A distribuicao de vendas por categoria é a seguinte: Bebidas 22%, Frutos do Mar 18%, Condimentos 15%, Produtos Lacteos 12%, Confeitos 10%, Graos/Cereais 12%, Carnes/Aves 6%, Produtos Agricolas 5%."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-08-13T23:26:03.623307",
+  "modelo": "gpt-3.5-turbo",
+  "total_casos": 5,
+  "casos_passaram": 0,
+  "taxa_sucesso": "0.0%",
+  "resultados": [
+    {
+      "id": "001",
+      "pergunta": "Quantas unidades de produto X tem em estoque?",
+      "passou": false,
+      "detalhes": {
+        "contem_quantidade": false,
+        "contem_unidades": true,
+        "nao_contem_nÃ£o sei": true,
+        "nao_contem_nÃ£o tenho informaÃ§Ã£o": true
+      },
+      "resposta": "O total de unidades do produto X em estoque é de 0 unidades."
+    },
+    {
+      "id": "002",
+      "pergunta": "Quais produtos estÃ£o com estoque abaixo de 10 unidades?",
+      "passou": false,
+      "detalhes": {
+        "contem_produto": true,
+        "contem_quantidade": false,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "Os seguintes produtos estão com estoque abaixo de 10 unidades:\n\n1. Chef Anton's Gumbo Mix\n2. Northwoods Cranberry Sauce\n3. Alice Mutton\n4. Sir Rodney's Scones\n5. Thüringer Rostbratwurst\n6. Gorgonzola Telino\n7. Mascarpone Fabioli\n8. Rogede sild\n9. Perth Pasties\n10. Louisiana Hot Spiced Okra\n11. Scottish Longbreads\n12. Longlife Tofu\n\nEssas são as informações dos produtos com estoque abaixo de 10 unidades."
+    },
+    {
+      "id": "003",
+      "pergunta": "Quantos pedidos com nome de categoria X?",
+      "passou": false,
+      "detalhes": {
+        "contem_nome_categoria": false,
+        "contem_quantidade_da_categoria": false,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "Existem 12 pedidos com produtos da categoria X."
+    },
+    {
+      "id": "004",
+      "pergunta": "Qual produto Ã© o mais caro?",
+      "passou": false,
+      "detalhes": {
+        "contem_nome_produto": false,
+        "contem_quantidade_do_produto": false,
+        "nao_contem_nÃ£o sei": true,
+        "nao_contem_nÃ£o tenho essa informaÃ§Ã£o": true
+      },
+      "resposta": "O produto mais caro é \"Côte de Blaye\" com o preço de R$ 263,50."
+    },
+    {
+      "id": "005",
+      "pergunta": "Como estÃ¡ a distribuiÃ§Ã£o de vendas por categoria",
+      "passou": false,
+      "detalhes": {
+        "contem_nome_categoria": false,
+        "contem_proporcao_categoria": false,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "A distribuição de estoque por categoria de produtos é a seguinte:\n\n- Bebidas: 559 unidades em estoque\n- Condimentos: 507 unidades em estoque\n- Confeitos: 386 unidades em estoque\n- Produtos Lácteos: 393 unidades em estoque\n- Grãos/Cereais: 308 unidades em estoque\n- Carnes/Aves: 165 unidades em estoque\n- Produtos Agrícolas: 100 unidades em estoque\n- Frutos do Mar: 701 unidades em estoque\n\nEsses números representam a quantidade total de unidades em estoque para cada categoria de produtos."
+    }
+  ]
+}

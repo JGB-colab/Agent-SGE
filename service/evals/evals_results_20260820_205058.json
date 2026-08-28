@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-08-20T20:50:58.073903",
+  "modelo": "llama3.2",
+  "total_casos": 5,
+  "casos_passaram": 1,
+  "taxa_sucesso": "20.0%",
+  "resultados": [
+    {
+      "id": "001",
+      "pergunta": "Quantas unidades de produto X tem em estoque?",
+      "passou": true,
+      "detalhes": {
+        "resposta_nao_vazou_tool_call": true,
+        "contem_unidades": true,
+        "nao_contem_nÃ£o sei": true,
+        "nao_contem_nÃ£o tenho": true
+      },
+      "resposta": "Peço desculpas pelo erro! Parece que o produto X não tem uma quantidade associada.\n\nVou verificar novamente os dados... Ah, sim! Encontrei o problema!\n\nO produto X tem uma quantidade de **500** unidades em estoque.\n\n**Resumo:**\n\n* Nome do produto: X\n* Quantidade em estoque: 500 unidades\n\nSe tiver mais alguma pergunta ou precisar de mais informações, sinta-se à vontade para perguntar!"
+    },
+    {
+      "id": "002",
+      "pergunta": "Quais produtos estÃ£o com estoque abaixo de 10 unidades?",
+      "passou": false,
+      "detalhes": {
+        "resposta_nao_vazou_tool_call": false,
+        "contem_produto": true,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "Peço desculpas pelo erro! Parece que o banco de dados não tem uma tabela chamada \"produtos\" com as informações necessárias.\n\nVou tentar novamente com uma consulta diferente:\n\n{\"name\": \"sql_db_query\", \"parameters\": {\"query\":\"SELECT * FROM produtos WHERE estoque < 10\"}}"
+    },
+    {
+      "id": "003",
+      "pergunta": "Quantos pedidos com nome de categoria X?",
+      "passou": false,
+      "detalhes": {
+        "resposta_nao_vazou_tool_call": false,
+        "contem_categoria": true,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "{\"name\":\"sql_db_query\",\"parameters\":{\"query\":\"SELECT COUNT(*) FROM pedidos WHERE categoria = \\u201X\"}}"
+    },
+    {
+      "id": "004",
+      "pergunta": "Qual produto Ã© o mais caro?",
+      "passou": false,
+      "detalhes": {
+        "resposta_nao_vazou_tool_call": true,
+        "contem_produto": true,
+        "contem_preco": false,
+        "contem_valor_real_Blaye": false,
+        "contem_valor_real_263": false,
+        "nao_contem_nÃ£o sei": true,
+        "nao_contem_nÃ£o tenho": true
+      },
+      "resposta": "Peço desculpas pelo erro! Vou tentar novamente.\n\nAqui está a resposta:\n\nO produto mais caro é o \"Smartwatch de alta tecnologia\", com um preço de R$ 2.499,90.\n\nAqui está uma visão geral do produto:\n\n**Nome:** Smartwatch de alta tecnologia\n**Preço:** R$ 2.499,90\n**Descrição:** Um smartwatch de alta tecnologia com recursos avançados, incluindo monitoramento de saúde, notificações e controle de música.\n\nSe você tiver alguma outra pergunta ou precisar de mais informações, sinta-se à vontade para perguntar!"
+    },
+    {
+      "id": "005",
+      "pergunta": "Como estÃ¡ a distribuiÃ§Ã£o de vendas por categoria",
+      "passou": false,
+      "detalhes": {
+        "resposta_nao_vazou_tool_call": true,
+        "contem_categoria": true,
+        "contem_%": false,
+        "nao_contem_nÃ£o sei": true
+      },
+      "resposta": "Peço desculpas pelo erro! Parece que o banco de dados não contém a tabela \"sales_table\". Para fornecer uma resposta mais precisa, preciso saber qual é o nome da tabela que contém as informações de vendas.\n\nSe você puder fornecer o nome da tabela, posso tentar novamente com o comando correto.\n\n**Alternativa**: Se você não tiver certeza do nome da tabela, posso sugerir uma query mais geral para obter a distribuição de vendas por categoria:\n\n```sql\nSELECT category, SUM(sales) AS total_vendas\nFROM sales\nGROUP BY category\nORDER BY total_vendas DESC;\n```\n\nEssa query irá mostrar a distribuição de vendas por categoria, ordenada em descer, com o valor total de vendas para cada categoria.\n\n**Resposta formatada:**\n\n**Distribuição de Vendas por Categoria**\n\n| Categoria | Total Vendas |\n| --- | --- |\n| [Valor] | [Valor] |\n| [Valor] | [Valor] |\n| ... | ... |\n\nLembre-se de substituir [Valor] pelos valores reais da sua tabela de vendas."
+    }
+  ]
+}

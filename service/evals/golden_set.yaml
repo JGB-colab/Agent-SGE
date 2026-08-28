@@ -1,0 +1,33 @@
+casos:
+ - id : "001"
+   pergunta : "Quantas unidades de produto X tem em estoque?"
+   resposta_esperada:
+      deve_conter : ["unidades"]
+      nao_deve_conter : ["não sei", "não tenho"]
+      tipo: "numerica"
+
+ - id : "002"
+   pergunta : "Quais produtos estão com estoque abaixo de 10 unidades?"
+   resposta_esperada:
+      deve_conter : ["produto"]
+      nao_deve_conter : ["não sei"]
+      tipo: "lista"
+ - id : "003"
+   pergunta : "Quantos pedidos com nome de categoria X?"
+   resposta_esperada:
+      deve_conter: ["categoria"]
+      nao_deve_conter : ["não sei"]
+      tipo: "texto"
+ - id : "004"
+   pergunta : "Qual produto é o mais caro?"
+   resposta_esperada:
+      deve_conter : ["produto", "preco"]
+      deve_conter_valor_real : ["Blaye", "263"]
+      nao_deve_conter : ["não sei", "não tenho"]
+      tipo : "texto"
+ - id : "005"
+   pergunta : "Como está a distribuição de vendas por categoria"
+   resposta_esperada:
+     deve_conter : ["categoria", "%"]
+     nao_deve_conter : ["não sei"]
+     tipo : "lista"
